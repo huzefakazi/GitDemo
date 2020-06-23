@@ -48,8 +48,9 @@ public class Cart {
 		driver.findElement(By.cssSelector(".promoCode")).sendKeys("rahulshettyacademy");
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".promoBtn")));
 		driver.findElement(By.cssSelector(".promoBtn")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".promoInfo")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".promoInfo")));
 		Assert.assertEquals(driver.findElement(By.cssSelector(".promoInfo")).getText(), "Code applied ..!");
+		driver.findElement(By.xpath("//button[text()='Place Order']")).click();
 		driver.findElement(By.xpath("//button[text()='Place Order']")).click();
 		}
 		

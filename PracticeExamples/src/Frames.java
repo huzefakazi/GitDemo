@@ -19,6 +19,7 @@ public class Frames {
 		a.dragAndDrop(source, target).build().perform();
 		driver.findElements(By.tagName("iframe")).size();
 		driver.switchTo().defaultContent();
+		System.out.print("Hello World");
 	}
 
 }
