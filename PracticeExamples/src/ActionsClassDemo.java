@@ -10,19 +10,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ActionsClassDemo {
 	static WebDriverWait wait;
 	public static void main(String[] args) {
+		System.out.println("This is develop branch");
 		System.setProperty("webdriver.chrome.driver", "Installers/Webdrivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		//driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://www.amazon.com/");
 		
-		wait = new WebDriverWait(driver, 5);
+		wait = new WebDriverWait(driver, 15);
 		Actions action = new Actions(driver);
 				
 		WebElement element = driver.findElement(By.id("nav-link-accountList"));
 		
 		
-		//wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("twotabsearchtextbox"))));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("twotabsearchtextbox"))));
 		//action.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("nose and ear trimmer").doubleClick().build().perform();
 		
 		wait.until(ExpectedConditions.visibilityOf(element));
